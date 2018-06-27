@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Atualizar Produto</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Fechar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Produto</h2>
+  <form (ngSubmit)="atualizarProduto(produtos.id_produto)">
+    <ion-item>
+      <ion-label floating>Nome do Produto</ion-label>
+      <ion-input type="text" [(ngModel)]="produtos.nomeproduto" name="nomeproduto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Descrição</ion-label>
+      <ion-input type="text" [(ngModel)]="produtos.descricao" name="descricao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Unidade de Medida</ion-label>
+      <ion-input type="text" [(ngModel)]="produtos.medida" name="medida"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Quantidade Mínima</ion-label>
+      <ion-input type="number" [(ngModel)]="produtos.qtdMinima" name="qtdMinima"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Valor</ion-label>
+      <ion-input type="number" [(ngModel)]="produtos.valor" name="valor"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Codigo de Barra</ion-label>
+      <ion-input type="number" [(ngModel)]="produtos.codigoBarra" name="codigoBarra"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Categoria</ion-label>
+      <ion-input type="text" [(ngModel)]="produtos.categoria" name="categoria"></ion-input>
+    </ion-item>
+  </form>
+  <br>
+  <button ion-button style="width: 48%" round color="secondary" type="submit">Salvar</button>
+  <button ion-button style="width: 48%" round color="danger" click="closeModal()">Cancelar</button>
+
+</ion-content>

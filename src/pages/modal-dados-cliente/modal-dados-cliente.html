@@ -1,0 +1,41 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Dados do Cliente</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Fechar</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-grid>
+        <p><b>Codigo cliente: </b> {{clientes.id_contato}}</p>
+        <p><b>Nome fantasia: </b> {{clientes.nomeFantasia}}</p>
+        <p><b>Razão social: </b>{{clientes.razaoSocial}}</p>
+        <p><b>CNPJ: </b>{{clientes.cnpj}}</p>
+        <p><b>Telefone1: </b>{{clientes.telefone1}}</p>
+        <p><b>Telefone2: </b>{{clientes.telefone2}}</p>
+        <p><b>E-mail: </b>{{clientes.email}}</p>
+        <p><b>Logradouro: </b>{{clientes.logradouro}}</p>
+        <p><b>Numero: </b>{{clientes.numero}}</p>
+        <p><b>Bairro: </b>{{clientes.bairro}}</p>
+        <p><b>Cidade: </b>{{clientes.localidade}}</p>
+        <p><b>Estado: </b>{{clientes.uf}}</p>
+        <p><b>CEP: </b>{{clientes.cep}}</p>
+        <p><b>Complemento: </b>{{clientes.complemento}}</p>
+        <p><b>Observação: </b>{{clientes.observacao}}</p>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button round style="width: 100%" color="light" (click)="abrirModalHistorico(clientes.id_contato)"> Histórico </button>
+  <button ion-button round style="width: 48%" color="danger" (click)="deletarCliente(clientes.id_contato)"> Deletar </button>
+  <button ion-button round style="width: 48%" color="secondary" (click)="abrirModalAtualizar(clientes.id_contato)"> Atualizar </button>
+  <div class="img-container" *ngIf="clientes.length <= 0">
+    <ion-icon name="list-box"></ion-icon> Não existem clientes cadastrados
+  </div>
+</ion-content>

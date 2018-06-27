@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Atualizar Usuário</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Fechar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="atualizarUsuario(usuarios.id_usuario)">
+      <ion-item>
+          <ion-label floating>Nome do uduario</ion-label>
+          <ion-input type="text" [(ngModel)]="usuarios.nome_usuario" name="nome_usuario"></ion-input>
+        </ion-item>
+    <ion-item>
+      <ion-label floating>Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="usuarios.usuario" name="usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo Usuario</ion-label>
+      <ion-select [(ngModel)]="usuarios.admin" name="admin">
+
+        <ion-option value=true>Administrador</ion-option>
+        <ion-option value=false>Vendedor</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Senha</ion-label>
+      <ion-input type="text" [(ngModel)]="usuarios.senha" name="senha"></ion-input>
+    </ion-item>
+    
+
+  </form>
+  <button ion-button round color="secondary" type="submit">Salvar</button>
+  <button ion-button round color="danger" click="closeModal()">Cancelar</button>
+
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Pedidos Confirmados</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-item >
+        <button (click)="abrirModalPedido(pedido['id_pedido'])" *ngFor="let pedido of pedidos" ion-item>
+       
+        <h2>{{pedido.contato.nomeFantasia}}</h2>
+        <p>Número do pedido: {{pedido.id_pedido}} </p>
+        <p>R$: {{pedido.valor_total}} Data: {{pedido.data}} {{pedido.confirmado}}</p>
+  
+      </button>
+      </ion-item>
+    
+    <div class="img-container" *ngIf="pedidos.length <= 0">
+       Não existem pedidos cadastrados
+    </div>   
+
+</ion-content>

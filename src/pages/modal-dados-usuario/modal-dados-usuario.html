@@ -1,0 +1,30 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Dados do Usuário</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Fechar</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-grid>
+        <p><b>Id Usuario: </b> {{usuarios.id_usuario}}</p>
+        <p><b>Nome do usuario: </b>{{usuarios.nome_usuario}}</p>
+        <p><b>Usuario: </b>{{usuarios.usuario}}</p>
+        <p><b>Tipo Usuario: </b>{{usuarios.admin}}</p>
+        <p><b>Senha: </b>{{usuarios.senha}}</p>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button round color="secondary" (click)="abrirModalAtualizar(usuarios.id_usuario)"> Atualizar </button>
+  <button ion-button round color="danger" (click)="deletarUsuario(usuarios.id_usuario)"> Delete </button>
+  <div class="img-container" *ngIf="usuarios.length <= 0">
+    <ion-icon name="list-box"></ion-icon> Não existem usuarios cadastrados
+  </div>
+</ion-content>

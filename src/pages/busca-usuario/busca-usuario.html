@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Buscar Usuário</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-searchbar (ionInput)="getBusca($event)"></ion-searchbar>
+  </ion-item>
+  <button (click)="abrirModalDadosUsuario(usuario['id_usuario'])" *ngFor="let usuario of usuarios" ion-item>
+    <ion-icon item-start name="contact"></ion-icon>
+    <h2>{{usuario.usuario}} {{usuario.admin}}</h2>
+    
+  </button>
+  <div class="img-container" *ngIf="usuarios.length <= 0">
+    <ion-icon name="list-box"></ion-icon> Não existem Usuários cadastrados
+  </div>
+</ion-content>

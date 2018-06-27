@@ -1,0 +1,20 @@
+page-login {
+    ion-icon {
+        text-align: center;
+    }
+    img {
+        height: auto;
+        width: auto;
+        margin: auto;
+        display: block;
+        align-items: center;
+    }
+    
+}
+
+.fundo {
+    background: rgb(30,87,153); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(32,124,202,1) 43%, rgba(41,137,216,1) 64%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(32,124,202,1) 43%,rgba(41,137,216,1) 64%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(32,124,202,1) 43%,rgba(41,137,216,1) 64%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}

@@ -1,0 +1,36 @@
+<!-- <ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+
+<ion-content class = 'page fundo' padding >
+  <ion-list>
+    <ion-card style="top:130px; position: relative;">
+      <ion-card-header>
+        <img align-itens="center" src='../../assets/imgs/Logo_ProjetoX.png'/>
+      </ion-card-header>  
+      <ion-item>
+        <!-- <div> -->
+          <ion-icon item-start name="contact"></ion-icon>
+          <ion-label floating>Usuário</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario" name="usuario" required></ion-input>
+        <!-- </div> -->
+      </ion-item>
+
+      <ion-item>
+        <ion-icon item-start name="key"></ion-icon>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="senha" name="senha" required></ion-input>
+      </ion-item>
+      <div text-center>
+      <button ion-button round color="primary" [disabled]="!usuario || !senha" (click)="logar()">
+          logar
+        </button>
+      </div>
+    </ion-card>
+  </ion-list>  
+</ion-content>

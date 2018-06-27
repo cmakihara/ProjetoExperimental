@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Buscar Clientes</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-searchbar (ionInput)="getBusca($event)"></ion-searchbar>
+  </ion-item>
+  <button (click)="abrirModalDadosCliente(cliente['id_contato'])" *ngFor="let cliente of clientes" ion-item>
+    <ion-icon item-start name="contact"></ion-icon>
+    <h2>{{cliente.nomeFantasia}}</h2>
+    <p>{{cliente.razaoSocial}}</p>
+    CNPJ<ion-note> {{cliente.cnpj}}</ion-note>
+  </button>
+  <div class="img-container" *ngIf="clientes.length <= 0">
+    <ion-icon name="list-box"></ion-icon> Não existem clientes cadastrados
+  </div>
+</ion-content>

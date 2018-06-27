@@ -1,0 +1,62 @@
+{
+  "name": "teste",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api/cliente",
+      "proxyUrl": "http://localhost:8000/api/agenda",
+      "secure": "false",
+      "logLevel": "debug"
+    },
+    {
+      "path": "/api/produto",
+      "proxyUrl": "http://localhost:8000/api/produto",
+      "secure": "false",
+      "logLevel": "debug"
+    },
+    {
+      "path": "/api/usuario",
+      "proxyUrl": "http://localhost:8000/api/usuario",
+      "secure": "false",
+      "logLevel": "debug"
+    },
+    {
+      "path": "/api/usuario/login",
+      "proxyUrl": "http://localhost:8000/api/usuario/login",
+      "secure": "false",
+      "logLevel": "debug"
+    },
+    {
+      "path": "/api/pedido",
+      "proxyUrl": "http://localhost:8000/api/pedido",
+      "secure": "false",
+      "logLevel": "debug"
+    },
+    {
+      "path": "/api/itempedido",
+      "proxyUrl": "http://localhost:8000/api/itempedido",
+      "secure": "false",
+      "logLevel": "debug"
+    }
+    ,
+    {
+      "path": "/api/itempedido",
+      "proxyUrl": "http://localhost:8000/api/pedido/cliente",
+      "secure": "false",
+      "logLevel": "debug"
+    }
+    ,
+    {
+      "path": "/api/itempedido",
+      "proxyUrl": "http://localhost:8000/api/itempedido/pedido",
+      "secure": "false",
+      "logLevel": "debug"
+    }
+  ],
+
+  "integrations": {
+    "cordova": {}
+  }
+
+}

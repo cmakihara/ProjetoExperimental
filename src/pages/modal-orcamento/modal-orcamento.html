@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Orçamento N° {{id}}</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="closeModal()">Fechar</button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+    <p>Cliente</p>
+    <ion-item  >
+      <h2>{{pedidos.contato?.nomeFantasia}}</h2>
+      <p>CNPJ: {{pedidos.contato?.cnpj}}</p>
+      <p>Valor total R$: {{pedidos.valor_total}}</p>
+      <p>Data do orçamento: {{pedidos.data}}</p>
+      </ion-item>
+
+
+      <p>Produto</p>
+     <ion-item *ngFor="let itemPedido of itemPedidos">
+
+        <p>{{itemPedido.produto.nomeproduto}}</p>
+        <p>Quantidade: {{itemPedido.quantidade}}     R$:{{itemPedido.produto.valor}}</p>
+
+      </ion-item>
+
+      <button ion-button (click)="enviarEmail()">Enviar E-mail</button>
+      <button ion-button (click)="confirmarPedido()">Confirmar Pedido</button>
+
+</ion-content>

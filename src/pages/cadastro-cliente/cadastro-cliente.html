@@ -1,0 +1,129 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cadastro de Cliente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form padding [formGroup]='clienteForm' novalidate>
+
+    <ion-item>
+      <ion-label floating>Razão Social</ion-label>
+      <ion-input [(ngModel)]="razaoSocial" formControlName="razaoSocial" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorRazaoSocial" class="error">{{messageRazaoSocial}}</h6>
+
+    <ion-item>
+      <ion-label floating>Nome Fantasia</ion-label>
+      <ion-input [(ngModel)]="nomeFantasia" formControlName="nomeFantasia" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorNomeFantasia" class="error">{{messageNomeFantasia}}</h6>
+
+    <ion-item>
+      <ion-label floating>Cnpj</ion-label>
+      <ion-input [(ngModel)]="cnpj" formControlName="cnpj" [brmasker]="{mask:'00.000.000/0000-00', len:18, type:'num'}" type="text"
+        clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorCnpj" class="error">{{messageCnpj}}</h6>
+
+    <ion-item>
+      <ion-label floating>Telefone</ion-label>
+      <ion-input [(ngModel)]="telefone1" formControlName="telefone1" [brmasker]="{mask:'(00) 0000-0000', len:14, type:'num'}" type="text"
+        clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorTelefone1" class="error">{{messageTelefone1}}</h6>
+
+    <ion-item>
+      <ion-label floating>Celular</ion-label>
+      <ion-input [(ngModel)]="telefone2" formControlName="telefone2" [brmasker]="{mask:'(00) 00000-0000', len:15, type:'num'}"
+        type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorTelefone2" class="error">{{messageTelefone2}}</h6>
+
+    <ion-item>
+      <ion-label floating>E-mail</ion-label>
+      <ion-input [(ngModel)]="email" formControlName="email" type="email" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorEmail" class="error">{{messageEmail}}</h6>
+
+    <ion-item style="    position: relative;
+    width: 80%;
+    display: inline-block">
+      <ion-label floating>CEP</ion-label>
+      <ion-input [(ngModel)]="cep" formControlName="cep" type="number" clearInput
+        clearOnEdit="false">
+      </ion-input>
+
+    </ion-item>
+    <button style="top: 30px;
+                   float: right;
+                   width: 50px;
+                  position: relative" ion-button round (click)="buscaCep(cep)">
+
+    </button>
+
+    <h6 *ngIf="errorCep" class="error">{{messageCep}}</h6>
+
+    <ion-item>
+      <ion-label floating>Rua</ion-label>
+      <ion-input [(ngModel)]="logradouro" formControlName="logradouro" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorLogradouro" class="error">{{messageLogradouro}}</h6>
+
+    <ion-item>
+      <ion-label floating>Número</ion-label>
+      <ion-input [(ngModel)]="numero" formControlName="numero" type="number" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorNumero" class="error">{{messageNumero}}</h6>
+
+    <ion-item>
+      <ion-label floating>Bairro</ion-label>
+      <ion-input [(ngModel)]="bairro" formControlName="bairro" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorBairro" class="error">{{messageBairro}}</h6>
+
+    <ion-item>
+      <ion-label floating>Cidade</ion-label>
+      <ion-input [(ngModel)]="localidade" formControlName="localidade" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorLocalidade" class="error">{{messageLocalidade}}</h6>
+
+    <ion-item>
+      <ion-label floating>Estado</ion-label>
+      <ion-input [(ngModel)]="uf" formControlName="uf" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorUf" class="error">{{messageUf}}</h6>
+
+    <ion-item>
+      <ion-label floating>Complemento</ion-label>
+      <ion-input [(ngModel)]="complemento" formControlName="complemento" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorComplemento" class="error">{{messageComplemento}}</h6>
+
+    <ion-item>
+      <ion-label floating>Observação</ion-label>
+      <ion-input [(ngModel)]="observacao" formControlName="observacao" type="text" clearInput clearOnEdit="false"></ion-input>
+    </ion-item>
+    <h6 *ngIf="errorObservacao" class="error">{{messageObservacao}}</h6>
+
+  </form>
+  <button ion-button style="width: 48%" round color="light" (click)="salvouContinuou()">Salvar e Continuar</button>
+  <button ion-button style="width: 48%" round color="secondary" (click)="salvou()">Salvar</button>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Selecionar Produto</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Fechar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-searchbar (ionInput)="getBusca($event)"></ion-searchbar>
+  </ion-item>
+  <button *ngFor="let produto of produtos" ion-item (click)="abrirModalDadosProduto(produto['id_produto'])">
+    <ion-icon  item-start name="qr-scanner"></ion-icon>
+    <h2>{{produto.nomeproduto}}</h2>
+    <p>R$: {{produto.valor}}</p>
+  </button>
+
+  <div class="img-container" *ngIf="produtos.length <= 0">
+    <ion-icon name="list-box"></ion-icon> Não existem produtos cadastrados
+  </div>
+</ion-content>

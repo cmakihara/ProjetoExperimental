@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ModalOrcamentoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pedido N° {{id}}</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="closeModal()">Fechar</button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+    <p>Cliente</p>
+    <ion-item  >
+      <h2>{{pedidos.contato?.nomeFantasia}}</h2>
+      <p>CNPJ: {{pedidos.contato?.cnpj}}</p>
+      <p>Valor total R$: {{pedidos.valor_total}}</p>
+      <p>Data do pedido: {{pedidos.data}}</p>               
+      </ion-item>
+
+
+      <p>Produtos</p>
+     <ion-item *ngFor="let itemPedido of itemPedidos"> 
+      
+       
+        <p>{{itemPedido.produto.nomeproduto}}</p>
+        <p>Quantidade: {{itemPedido.quantidade}}     R$:{{itemPedido.produto.valor}}</p> 
+        
+      </ion-item>
+
+</ion-content>

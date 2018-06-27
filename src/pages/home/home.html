@@ -1,0 +1,66 @@
+<ion-menu [content]="content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+
+      <ion-item-group>
+        <ion-grid>
+          Páginas
+        </ion-grid>
+        <div>
+          <!-- <button menuClose ion-item (click)="openPage(page)"  *ngFor="let page of pages" [disabled]="page.title==='Cadastro Produto'"> -->
+          <button menuClose ion-item (click)="openPage(page)" *ngFor="let page of pages">
+            <ion-icon [name]="page.icon" item-start></ion-icon>
+            {{ page.title }}
+          </button>
+        </div>
+      </ion-item-group>
+
+      <ion-item-group>
+     
+        <button menuClose ion-item (click)="logout()">
+          <ion-icon name="log-out" item-start></ion-icon>
+          Sair
+        </button>
+      </ion-item-group>
+    </ion-list>
+    Usuário Logado: {{nomeUsuario}}
+  </ion-content>
+</ion-menu>
+
+
+<ion-nav #content [root]="rootPage" swipeBackEnabled="false"></ion-nav>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Usuário: {{nomeUsuario}}</ion-title>
+    <ion-buttons end>
+ 
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div text-center style="padding-bottom: 15px">           
+  </div> 
+  <div text-center>
+    <p *ngIf="abrir">Junho</p>
+  </div>  
+  <div text-center style="padding-bottom: 15px">          
+  </div>
+  <div text-center *ngIf="abrir">
+    <button ion-fab mini (click)="grafico()" color="secondary"><ion-icon name="refresh"></ion-icon></button>
+  </div>
+    <div style="padding-top:10px;">
+      <canvas #chartCanvas></canvas>
+  </div>
+
+</ion-content>

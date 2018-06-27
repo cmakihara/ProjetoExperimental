@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Orçamentos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>   
+    
+    <ion-item >
+      <button (click)="abrirModalOrcamento(pedido['id_pedido'])" *ngFor="let pedido of pedidos" ion-item>
+      <ion-icon item-start name="clipboard"></ion-icon>
+      <h2>{{pedido.contato.nomeFantasia}}</h2>
+      <p>Número do pedido: {{pedido.id_pedido}} </p>
+      <p>R$: {{pedido.valor_total}} Data: {{pedido.data}} {{pedido.confirmado}}</p>
+
+    </button>
+    </ion-item>
+    
+    <div class="img-container" *ngIf="pedidos.length <= 0">
+      <ion-icon name="list-box"></ion-icon> Não há orçamentos
+    </div>   
+
+</ion-content>

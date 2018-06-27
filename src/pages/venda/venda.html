@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Vendas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button round ion-button color="light" (click)="abrirModalCliente()"> Selecionar Cliente</button>
+  <ion-list>
+    <ion-item *ngIf="abrir">
+      <ion-grid>
+        <p><b>Nome Fantasia: </b>{{clientes.nomeFantasia}}</p>
+        <p><b>Razão Social: </b>{{clientes.razaoSocial}}</p>
+        <p><b>CNPJ: </b>{{clientes.cnpj}}</p>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <button ion-button round ion-button color="light" (click)="abrirModalProduto()"> Selecionar Produto</button>
+  <ion-list>
+    <ion-item *ngFor="let lista of listaProduto">
+      <ion-grid>
+        <p>{{lista.nomeproduto}}<b> R$: </b>{{lista.valor}}</p>
+
+      </ion-grid>
+    </ion-item>
+    <p *ngIf="abrir2">Total: {{total}}</p>
+  </ion-list>
+  <ion-input type="number" [(ngModel)]="desconto" ></ion-input>
+  <button ion-button style="width: 48%;" round (click)="salvarOrcamento()" *ngIf="abrir && abrir2">Salvar orçamento</button>
+  <button ion-button style="width: 48%;" round color="secondary" (click)="salvarPedido()" *ngIf="abrir && abrir2 ">Salvar Pedido</button>
+</ion-content>

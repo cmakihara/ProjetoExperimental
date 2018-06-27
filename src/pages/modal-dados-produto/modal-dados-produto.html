@@ -1,0 +1,36 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Dados do Produto</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Fechar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-grid>
+        <p><b>Nome produto: </b>{{produtos.nomeproduto}}</p>
+        <p><b>Descrição: </b>{{produtos.descricao}}</p>
+        <p><b>Medida: </b>{{produtos.medida}}</p>
+        <p><b>Quantidade minima: </b>{{produtos.qtdMinima}}</p>
+        <p><b>Valor: </b>{{produtos.valor}}</p>
+        <p><b>Codigo de barra: </b>{{produtos.codigoBarra}}</p>
+        <p><b>Categoria: </b>{{produtos.categoria}}</p>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+
+  <button ion-button style="width: 48%;" round color="danger" (click)="deletarProduto(produtos.id_produto)"> Delete </button>
+  <button ion-button style="width: 48%;" round color="secondary" (click)="abrirModalAtualizar(produtos.id_produto)"> Atualizar </button>
+  <div class="img-container" *ngIf="produtos.length <= 0">
+    <ion-icon name="list-box"></ion-icon> Não existem produtos cadastrados
+  </div>
+</ion-content>

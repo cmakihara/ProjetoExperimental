@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Produto</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Fechar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-grid>
+        Nome do produto:
+        <p>{{produtos.nomeproduto}}</p>
+        Descrição:
+        <p>{{produtos.descricao}}</p>
+        Categoria:
+        <p>{{produtos.categoria}}</p>
+        Tipo de medida:
+        <p>{{produtos.medida}}</p>
+        Quantidade minima:
+        <p>{{produtos.qtdMinima}}</p>
+        Codigo de Barra:
+        <p>{{produtos.codigoBarra}}</p>
+        Valor
+        <p>R${{produtos.valor}}</p>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  Quantidade
+  <ion-list>
+    <ion-item>
+      <ion-input type="number" [(ngModel)]="quantidade" value=1></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button style="width: 48%;" round color="secondary" (click)="produtoSelecionado(produtos.id_produto)">Selecionar produto</button>
+  <button ion-button style="width: 48%;" round color="danger" (click)="closeModal()">Cancelar</button>

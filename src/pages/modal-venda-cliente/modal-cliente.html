@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Selecionar Cliente</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Fechar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-searchbar (ionInput)="getBusca($event)"></ion-searchbar>
+  </ion-item>
+  <button *ngFor="let cliente of clientes" ion-item (click)="selecionarCliente(cliente['id_contato'])">
+    <ion-icon (click)="selecionarCliente(cliente['id_contato'])" item-start name="contact"></ion-icon>
+    <h2>{{cliente.nomeFantasia}}</h2>
+    <p>{{cliente.razaoSocial}}</p>
+    <ion-note>{{cliente.cnpj}}</ion-note>
+  </button>
+
+  <div class="img-container" *ngIf="clientes.length <= 0">
+    <ion-icon name="list-box"></ion-icon> Não existem clientes cadastrados
+  </div>
+</ion-content>

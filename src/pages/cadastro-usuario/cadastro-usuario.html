@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cadastro de Usuário</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>  
+  <form padding [formGroup]='usuarioForm' (submit)="salvarUsuario()" novalidate>
+
+      <ion-item>
+          <ion-label floating>Nome do usuário</ion-label>
+          <ion-input [(ngModel)]="usuario.nome_usuario" formControlName="nome_usuario" type="text" clearInput clearOnEdit="false">
+          </ion-input>
+        </ion-item>
+    <ion-item>
+      <ion-label floating>Login</ion-label>
+      <ion-input [(ngModel)]="usuario.usuario" formControlName="login" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Senha</ion-label>
+      <ion-input [(ngModel)]="usuario.senha" formControlName="senha" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Perfil de Acesso</ion-label>
+      <ion-select [(ngModel)]="usuario.admin" formControlName="admin">
+
+        <ion-option value=true>Admim</ion-option>
+        <ion-option value=false>Vendedor</ion-option>
+      </ion-select>
+    </ion-item>
+  </form>
+
+  <button ion-button round color="secondary" >Salvar</button>
+</ion-content>

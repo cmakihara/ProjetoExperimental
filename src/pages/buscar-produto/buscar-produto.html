@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Buscar Produtos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-searchbar (ionInput)="getBusca($event)"></ion-searchbar>
+  </ion-item>
+
+  <button (click)="abrirModalDadosProdutos(produto['id_produto'])" *ngFor="let produto of produtos" ion-item>
+    <ion-icon item-start name="reorder"></ion-icon>
+    <h2>{{produto.nomeproduto}}</h2>
+    <p><b>R$: </b>{{produto.valor}}</p>
+  </button>
+
+  <div class="img-container" *ngIf="produtos.length <= 0">
+    <ion-icon name="list-box"></ion-icon> Não existem produtos cadastrados
+  </div>
+</ion-content>

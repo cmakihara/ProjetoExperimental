@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Atualizar Dados de Cliente</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Fechar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="atualizarContato(clientes.id_contato)">
+    <ion-item>
+      <ion-label floating>Razão Social</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.razaoSocial" name="razaoSocial"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Nome Fantasia</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.nomeFantasia" name="nomeFantasia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Cnpj</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.cnpj" [brmasker]="{mask:'00.000.000/0000-00', len:18, type:'num'}" name="cnpj"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Telefone 1</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.telefone1" [brmasker]="{mask:'(00) 0000-0000', len:14, type:'num'}" name="telefone1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Telefone 2</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.telefone2" [brmasker]="{mask:'(00) 00000-0000', len:15, type:'num'}" name="telefone2"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>E-mails</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>CEP</ion-label>
+        <ion-input type="text" [(ngModel)]="clientes.cep" name="cep"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label floating>Logradouro</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.logradouro" name="logradouro"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Numero</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.numero" name="numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Bairro</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.bairro" name="bairro"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Cidade</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.localidade" name="localidade"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Estado</ion-label>
+        <ion-input type="text" [(ngModel)]="clientes.uf" name="uf"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label floating>Complemento</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.complemento" name="complemento"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Observação</ion-label>
+      <ion-input type="text" [(ngModel)]="clientes.observacao" name="observacao"></ion-input>
+    </ion-item>
+    <br>
+      <button ion-button round style="width: 48%" color="secondary"  type="submit">Salvar</button>
+      <button ion-button round style="width: 48%" color="danger" type="button" (click)="closeModal()">Cancelar</button>
+ 
+  </form>
+
+
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cadastro de Produto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+ 
+  <form padding [formGroup]='produtoForm' novalidate>
+    <ion-item>
+      <ion-label floating>Nome do Produto</ion-label>
+      <ion-input [(ngModel)]="nomeproduto" formControlName="nomeproduto" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorNomeproduto" class="error">{{messageNomeproduto}}</h6>
+    <ion-item>
+      <ion-label floating>Descrição</ion-label>
+      <ion-input [(ngModel)]="descricao" formControlName="descricao" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorDescricao" class="error">{{messageDescricao}}</h6>
+    <ion-item>
+      <ion-label floating>Unidade de Medida</ion-label>
+      <ion-input [(ngModel)]="medida" formControlName="medida" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorMedida" class="error">{{messageMedida}}</h6>
+    <ion-item>
+      <ion-label floating>Quantidade Minima</ion-label>
+      <ion-input [(ngModel)]="qtdMinima" formControlName="qtdMinima" type="number" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorQtdMinima" class="error">{{messageQtdMinima}}</h6>
+    <ion-item>
+      <ion-label floating>Valor</ion-label>
+      <ion-input [(ngModel)]="valor" formControlName="valor" type="number" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorValor" class="error">{{messageValor}}</h6>
+    <ion-item>
+      <ion-label floating>Código de Barras</ion-label>
+      <ion-input [(ngModel)]="codigoBarra" formControlName="codigoBarra" type="number" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorCodigoBarra" class="error">{{messageCodigoBarra}}</h6>
+    <ion-item>
+      <ion-label floating>Categoria</ion-label>
+      <ion-input [(ngModel)]="categoria" formControlName="categoria" type="text" clearInput clearOnEdit="false">
+      </ion-input>
+    </ion-item>
+    <h6 *ngIf="errorCategoria" class="error">{{messageCategoria}}</h6>
+
+  </form>
+  <button ion-button style="width: 48%" round color="light" (click)="continua()">Salvar e Continuar</button>
+  <button ion-button style="width: 48%" round color="secondary" (click)="sair()">Salvar</button>
+</ion-content>
